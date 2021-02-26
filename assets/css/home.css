@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    margin: 0px;
+}
+#page-heading{
+    margin-top: 25px;
+    color: grey;
+}
+.list{
+    background-color: hotpink;
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-around;
+    margin:auto;
+    margin-top: 20px;
+}
+.list:hover{
+    background-color: lavender;
+}
+input{
+    border-top: none;
+    border-left: none;
+    outline: none;
+}

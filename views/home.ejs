@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <!-- <h1>Rendered from EJS View!</h1> -->
+        <h1 id="page-heading">Contact List</h1>
+        <div>
+            <ul>
+                <% for(let i of contact_list) { %>
+                    <div class="list">
+                    <li>
+                        <p><%= i.name %></p>
+                        <p><%= i.phone %></p>
+                        <p><%= i.email %></p>
+                    </li>
+                    <div style="margin-top: 30px;" class="delete-button">
+                        
+                        <!-- When using without database -->
+                            <!-- <a href="/delete-contact/?phone=<%= i.phone %>"> -->
+                            <a href="/delete-contact/?id=<%= i._id %>">
+                                <i class="fas fa-window-close"></i>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+            </ul>
+        </div>
+        <form action="/create-account" method="POST">
+            <input type="text" name="name" placeholder="Enter Name">
+            <input type="number" name="phone" placeholder="Enter Phone">
+            <input type="email" name="email" placeholder="Enter email">
+            <button type="submit">Add Contact</button>
+        </form>
+    </body>
+    <script type="text/javascript" src="/js/home.js"></script>
+    <script src="/js/home_posts.js"></script>
+</html>
